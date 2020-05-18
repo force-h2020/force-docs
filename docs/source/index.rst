@@ -7,10 +7,11 @@ User Manual
 ===========
 
 .. toctree::
-   :maxdepth: 2
 
-   Introduction <introduction>
-   Installation instructions <installation>
+    Introduction <introduction>
+    Optimization <optimization>
+    Installation instructions <installation>
+    Workflow Manager <workflow_manager>
 
 
 Indices and tables
