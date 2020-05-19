@@ -62,12 +62,6 @@ each with its own minima and maxima. At any point in parameter space, either:
     Pareto efficient points. These points often form along a line through parameter space,
     the **Pareto front**.
 
-There are a large number of algorithms for finding Pareto efficient points. These can be
-divided into two classes:
-
-- A priori. ....
-- A posteriori. .....
-
 Typically an industrial process will have multiple optimization criteria. Thus such
 algorithms are vitally important but have rarely been used through a lack of
 expertise and commonly available computational libraries or softwares that implement them.
@@ -107,7 +101,7 @@ form an **execution layer**. For graphs with a small number of nodes like
 that below it is easy to figure out the execution layers manually. There are
 **topological sort** algorithms which can calculate the execution order and
 execution layers of a directed graph: for instance Kahn's algorithm and
-depth-first search. In BDSS the execution layers are set manually by the user.
+depth-first search. In the BDSS the execution layers are set manually by the user.
 
 .. figure:: images/graph.png
     :scale: 35 %
