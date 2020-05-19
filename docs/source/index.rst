@@ -11,7 +11,7 @@ User Manual
     Introduction <introduction>
     Optimization <optimization>
     Installation instructions <installation>
-    Workflow Manager <workflow_manager>
+    The Workflow Manager <workflow_manager>
 
 
 Indices and tables

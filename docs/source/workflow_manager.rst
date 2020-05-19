@@ -1,9 +1,9 @@
 The Workflow Manager
 ====================
 
-The workflow manager (WM) allows the user to easily construct a graph of functions,
+The Workflow Manager allows the user to easily construct a graph of functions,
 optimize this graph and view the results graphically. A number of terms are specific
-to BDSS/WM or otherwise have a specific meaning within BDSS/WM.
+to the BDSS and the Workflow Manager or otherwise have a specific meaning within them.
 
 **Workflow**
     The directed graph of functions that models a process.
@@ -26,7 +26,7 @@ to BDSS/WM or otherwise have a specific meaning within BDSS/WM.
 Views
 -----
 
-The WM has two "views":
+The Workflow Manager has two "views":
 
 ``Setup Workflow``
     For constructing the workflow, selecting parameters and KPIs and selecting
@@ -70,7 +70,7 @@ Create an Execution Layer
 Select the ``Execution Layers`` tree-item and press the ``Add New Execution Layer``
 button. A tree-item, Layer 0, appears under ``Execution Layers``.
 
-Add a data source
+Add a Data Source
 ^^^^^^^^^^^^^^^^^
 
 Selecting the ``Layer 0`` tree-item brings up two panels at the right:
@@ -289,20 +289,3 @@ This brings up a file save dialog from which you can name and save
 the json. When you wish to load the json, go to the ``Setup Workflow``
 view, press ``Open`` in the tool-bar and select the json file. The entire
 workflow, optimizer, parameters and KPIs will be loaded.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
