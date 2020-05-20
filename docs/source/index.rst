@@ -11,6 +11,7 @@ User Manual
 
    Introduction <introduction>
    Installation instructions <installation>
+   Plugin Development <bdss_plugins>
 
 
 Indices and tables
