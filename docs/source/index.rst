@@ -9,10 +9,11 @@ User Manual
 .. toctree::
    :maxdepth: 2
 
-   Introduction <introduction>
-   Installation instructions <installation>
-   Plugin Development <bdss_plugins>
-
+    Introduction <introduction>
+    Optimization <optimization>
+    Installation instructions <installation>
+    Using the Workflow Manager <workflow_manager>
+    Plugin Development <bdss_plugins>
 
 Indices and tables
 ==================
