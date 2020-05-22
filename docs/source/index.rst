@@ -12,9 +12,8 @@ User Manual
     Introduction <introduction>
     Optimization <optimization>
     Installation instructions <installation>
-    The Workflow Manager <workflow_manager>
+    Using the Workflow Manager <workflow_manager>
     Plugin Development <bdss_plugins>
-
 
 Indices and tables
 ==================
