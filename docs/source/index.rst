@@ -1,22 +1,33 @@
-Welcome to FORCE Project documentation!
-=======================================
+FORCE Tutorial Documentation
+============================
 
-.. include:: ../../README.rst
+.. image:: https://travis-ci.com/force-h2020/force-docs.svg?branch=master
+   :target: https://travis-ci.com/force-h2020/force-docs
+   :alt: Build status
 
-User Manual
-===========
+.. image:: https://readthedocs.org/projects/force-tutorial/badge/?version=latest
+    :target: https://force-tutorial.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
-.. toctree::
-   :maxdepth: 2
+This repository contains documentation and tutorials for the FORCE project.
+It is implemented under the Formulations and Computational Engineering (FORCE) project within Horizon 2020
+(`NMBP-23-2016/721027 <https://www.the-force-project.eu>`_).
 
-    Introduction <introduction>
-    Optimization <optimization>
-    Installation instructions <installation>
-    Using the Workflow Manager <workflow_manager>
-    Plugin Development <bdss_plugins>
+The contents can be viewed at https://force-tutorial.readthedocs.io/en/latest/
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`search`
+.. topic:: Topics
+
+    .. toctree::
+       :maxdepth: 4
+       :numbered:
+
+        Introduction <introduction/introduction>
+        Using the BDSS: The Workflow Manager <using/using>
+        Extending the BDSS: Plugin Development <extending/extending>
+
+
+.. topic:: Indices and Tables
+
+    * :ref:`genindex`
+    * :ref:`search`

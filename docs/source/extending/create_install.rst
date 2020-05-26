@@ -1,34 +1,5 @@
-Tutorial 3: Plugin Development
-------------------------------
-
-Force BDSS is extensible through the `Envisage <https://docs.enthought.com/envisage/index.html>`_
-plugin framework. A plugin can be (and generally is) provided as a separate python package
-provides some new classes. Force BDSS will find these classes from the plugin at startup.
-
-A single plugin can provide one or more of the following entities to the ``force_bdss``
-CLI: ``MCO``, ``DataSources``, ``NotificationListeners``, ``UIHooks``. It can optionally
-provide ``DataView`` and ``ContributedUI`` objects to be used by the ``force_wfmanager`` GUI. These
-features will be dealt with in an extension tutorial.
-
-An example plugin implementation is available at:
-
-https://github.com/force-h2020/force-bdss-plugin-enthought-example
-
-To implement a new plugin, you must define at least four classes:
-
-- The ``Plugin`` class itself.
-- One of the entities you want to implement: a ``DataSource``,
-  ``NotificationListener``, ``MCO``, or ``UIHook``.
-- A ``Factory`` class for the entity above: it is responsible for creating the
-  specific entity, for example, a ``DataSource``
-- A ``Model`` class which contains configuration options for the entity.
-  For example, it can contain login and password information so that its data
-  source knows how to connect to a service. The ``Model`` is also shown visually
-  in the ``force_wfmanager`` UI, so some visual aspects need to be configured as
-  well.
-
-3.1 Creating a BDSS Plugin
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a Plugin
+=================
 
 All plugin classes must
 
@@ -75,8 +46,8 @@ All plugin classes must
         ]
 
 
-3.2 Installing the Plugin
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Install the Plugin
+------------------
 
 In order for the BDSS to recognize the plugin, it must be installed as a package in the deployed
 environment (``force-py36``). This can be performed using ``pip`` and an appropriate ``setup.py`` file,
@@ -120,8 +91,8 @@ the package in the deployed environment::
 
     edm run -e force-py36 -- pip install -e .
 
-3.3 Advanced Plugins
-~~~~~~~~~~~~~~~~~~~~
+Advanced Plugins
+----------------
 
 Additionally, a plugin can also define one or more custom visualization classes for the
 GUI application ``force-wfmanager``, typically to either display data or
