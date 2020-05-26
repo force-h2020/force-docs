@@ -18,3 +18,9 @@ The BDSS can be run either as a stand-alone command-line program or within a gra
 software called the **Workflow Manager**. The BDSS is also extensible: "plugins" can be developed by the user
 that add functionality to the software, typically in terms of functions and optimization algorithms.
 
+.. topic:: Topics
+
+    .. toctree::
+       :maxdepth: 2
+
+        Optimization <optimization>
