@@ -2,13 +2,16 @@ Extending the BDSS: Plugin Development
 ======================================
 
 Force BDSS is extensible through the `Envisage <https://docs.enthought.com/envisage/index.html>`_
-plugin framework. A plugin can be (and generally is) provided as a separate python package
+plugin framework. A plugin can be (and generally is) provided as a separate python package that
 provides some new classes. Force BDSS will find these classes from the plugin at startup.
 
-A single plugin can provide one or more of the following entities to the ``force_bdss``
-CLI: ``MCO``, ``DataSources``, ``NotificationListeners``, ``UIHooks``. It can optionally
-provide ``DataView`` and ``ContributedUI`` objects to be used by the ``force_wfmanager`` GUI. These
+A single plugin can provide one or more of the following: ``MCO``, ``DataSources``, ``NotificationListeners``, ``UIHooks``.
+It can optionally provide ``DataView`` and ``ContributedUI`` objects to be used by the ``force_wfmanager`` GUI: these
 features will be dealt with in an extension tutorial.
+
+
+
+
 
 An example plugin implementation is available at:
 
@@ -33,8 +36,8 @@ To implement a new plugin, you must define at least four classes:
        :maxdepth: 2
 
         The Plugin <create_install>
-        Data Sources <data_source>
-        Optimizer Engines <optimizer_engine>
+        Data Source <data_source>
+        Optimizer Engine <optimizer_engine>
         Parameterization <parameter>
         Notification <notification>
         User Interface <ui>
