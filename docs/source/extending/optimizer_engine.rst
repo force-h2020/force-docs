@@ -32,6 +32,7 @@ eechuie ::
                     [DataValue(value=v) for v in optimal_point],
                     [DataValue(value=v) for v in optimal_kpis],
                 )
+
 ``BaseMCOModel``
 ----------------
 weygeygeyu::
