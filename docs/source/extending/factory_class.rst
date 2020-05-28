@@ -33,14 +33,16 @@ Below we provide links to well documented code examples of factories and their a
       -
       - `Gaussian <https://github.com/force-h2020/force-bdss-plugin-enthought-example>`_
 
+    * - parameterization
+      - ``BaseMCOParameterFactory``
+      - ``BaseMCOParameter``
+      -
+      - `Ranged <https://github.com/force-h2020/force-bdss/blob/master/force_bdss/mco/parameters/mco_parameters.py>`_
+
     * - optimizer
       - ``BaseMCOFactory``
       - ``BaseMCO``, ``BaseMCOModel``, ``BaseMCOCommunicator``
       - ``BaseOptimizerEngine``, ``IOptimizer``
       - `Nevergrad <https://github.com/force-h2020/force-bdss-plugin-nevergrad/tree/master/force_nevergrad/mco>`_
 
-    * - parameter
-      - ``BaseMCOParameterFactory``
-      - ``BaseMCOParameter``
-      -
-      - Fixed
+In the following topics we go into these in more detail.

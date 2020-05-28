@@ -74,6 +74,8 @@ expertise and commonly available computational libraries or softwares that imple
 Optimizing a Directed Graph
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. _wf-graph-ref:
+
 Many processes can be divided up into granular, near-self-contained
 **sub-processes**, with the output of one feeding into the input of another. For
 instance a soap production line might be divided up into the melting of the fat,
@@ -107,6 +109,7 @@ that below it is easy to figure out the execution layers manually. There are
 **topological sort** algorithms which can calculate the execution order and
 execution layers of a directed graph: for instance Kahn's algorithm and
 depth-first search. In the BDSS the execution layers are set manually by the user.
+
 
 .. figure:: images/graph.png
     :scale: 35 %

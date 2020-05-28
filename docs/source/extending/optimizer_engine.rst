@@ -8,6 +8,11 @@ in :ref:`parameter space<optimization-ref>`, along with the associated criteria/
 minima or Pareto-effecient, but could just as well be any kind of sampling: e.g. a grid or
 random sample.
 
+We will illustrate how to design and use these classes, using the example of the
+Nevergrad optimizer that comes with the Nevergrad plugin. The source code for this
+optimizer can be examined
+`here <https://github.com/force-h2020/force-bdss-plugin-nevergrad/tree/master/force_nevergrad/mco>`_.
+
 
 ``BaseMCOModel``
 ----------------

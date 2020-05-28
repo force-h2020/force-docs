@@ -8,8 +8,11 @@ unordered. These different possibilities are the **parameterization** of the par
 are important because certain optimizers can only deal with certain parameterizations. For
 example gradient-based optimizers can only optimize continuous variables.
 
-
-
+A parameterization requires just two classes - a ``BaseMCOParameter`` and its factory.
+We will illustrate how to design and use these classes, using the example of the
+'ranged' parameterization that comes built in with the BDSS. The source code for this
+parameterization can be examined
+`here <https://github.com/force-h2020/force-bdss/blob/master/force_bdss/mco/parameters/mco_parameters.py>`_.
 
 ``BaseMCOParameter``
 --------------------
