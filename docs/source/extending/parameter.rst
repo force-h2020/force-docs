@@ -1,6 +1,8 @@
 Parameterization
 ================
 
+.. _parameterization-ref:
+
 The workflow's parameters can be treated in different ways by the optimizer. A parameter might be
 treated as a continuous variable (i.e. a real number) or a dis-continuous variable (e.g. an
 integer) or a categorical variable (i.e. a member of a finite set) that may be ordered or

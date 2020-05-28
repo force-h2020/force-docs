@@ -40,9 +40,9 @@ contains two panels:
     :align: center
     :scale: 50 %
 
-    The Pareto front for the Gauss 2d data source, calculated with the
-    Nevergrad CMA algorithm. The front stretches between the peaks of two,
-    two-dimensional Gaussians centered at (-1, -1) and (1, 1). The Pareto
+    The Pareto front for the two Gaussian data sources, calculated with the
+    Nevergrad CMA algorithm. The front stretches between the peaks centered
+    at (-1, -1) and (1, 1). The Pareto
     efficient points are color coded by the amplitude of the Gaussian
     centred at (-1, -1): both Gaussian's have negative amplitude (are
     minima) and cooler colors indicate lower values.
