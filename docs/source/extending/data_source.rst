@@ -1,7 +1,7 @@
 Data Source
 ===========
 
-A data source is a node in the workflow graph (see xxxx link).
+A data source is a node in the :ref:`workflow graph<wf-graph-ref>`.
 
 In the Workflow Manager, when you click on a data source, you will see the node's:
 
@@ -39,6 +39,8 @@ of the Gaussian data source, a two-dimensional Gaussian on the xy-plane:
 .. math::
         a = a_{peak} \exp{\left[- \frac{(x - c_{x})^{2}}{2 \sigma_{x}^2} - \frac{(y - c_{y})^{2}}{2 \sigma_{y}^2}\right]}
 
+The source code for this data source can be examined
+`here <https://github.com/force-h2020/force-bdss-plugin-enthought-example>`_.
 
 ``DataValue``
 -------------

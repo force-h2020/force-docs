@@ -36,6 +36,6 @@ To implement a new plugin, you must define at least four classes:
         Factories and Classes <factory_class>
         Data Source <data_source>
         Parameterization <parameter>
-        Optimizer Engine <optimizer_engine>
+        Optimizer <optimizer_engine>
         Notification <notification>
         User Interface <ui>
