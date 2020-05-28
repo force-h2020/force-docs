@@ -144,7 +144,7 @@ Selecting the ``Parameters`` tree-item brings up two panels at the right:
     :scale: 60 %
 
 When we specify a "parameter", as well as selecting a data source input we must also
-tell the optimizer how to treat that input: its ** :ref:`parameterization <parameterization-ref>` **.
+tell the optimizer how to treat that input: its :ref:`parameterization <parameterization-ref>`.
 Is the parameter:
 
 - fixed (i.e. a constant)?
