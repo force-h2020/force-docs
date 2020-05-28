@@ -1,22 +1,103 @@
 Parameterization
 ================
 
-MCO parameter types also require a model and a factory per each type. Right
-now, the only typo encountered is Range, but others may be provided in the
-future, by MCOs that support them.
+The workflow's parameters can be treated in different ways by the optimizer. A parameter might be
+treated as a continuous variable (i.e. a real number) or a dis-continuous variable (e.g. an
+integer) or a categorical variable (i.e. a member of a finite set) that may be ordered or
+unordered. These different possibilities are the **parameterization** of the parameter. They
+are important because certain optimizers can only deal with certain parameterizations. For
+example gradient-based optimizers can only optimize continuous variables.
 
-The parameter factory must inherit from ``BaseMCOParameterFactory`` and
-reimplement::
 
-    def get_identifier(self):
-    def get_name(self):
-    def get_description(self):
 
-as in the case of data source. Then::
 
-    def get_model_class(self):
+``BaseMCOParameter``
+--------------------
+A parameterization. ::
 
-must return a model class for the given parameter, inheriting from
-``BaseMCOParameter``. This model contains the data the user can set, and is
-relevant to the given parameter. For example, in the case of a Range, it might
-specify the min and max value, as well as the starting value.
+    class RangedMCOParameter(BaseMCOParameter):
+
+        #: Lower bound for parameter values range
+        lower_bound = Float(0.1, verify=True)
+
+        #: Upper bound for parameter values range
+        upper_bound = Float(100.0, verify=True)
+
+        #: Initial value. Defines the parameter bias
+        initial_value = Float(verify=True)
+
+        def _initial_value_default(self):
+            return 0.5 * (self.lower_bound + self.upper_bound)
+
+        def default_traits_view(self):
+            return View(
+                Item("lower_bound",
+                     editor=TextEditor(auto_set=False, enter_set=True, evaluate=float)),
+                Item("upper_bound",
+                    editor=TextEditor(auto_set=False, enter_set=True, evaluate=float)),
+                Item("initial_value",
+                    editor=RangeEditor(
+                        low_name="lower_bound",
+                        high_name="upper_bound",
+                        format="%.3f",
+                        label_width=28,
+                    ),
+                ),
+                Item("n_samples"),
+            )
+
+        def verify(self):
+
+            # .....
+
+
+The class's traits are the properties of the parameterization: in this case for a continuous
+variable (``Float``) with an initial value (``initial_value``) and a range (``lower_bound``
+and ``upper_bound``).
+
+The ``default_traits_view`` method provides a view to the Workflow Manager to control
+the parameterization attributes.
+
+.. figure:: images/parameter_set.png
+    :align: center
+    :scale: 70 %
+
+The ``verify`` method is used to verify that a given parameter conforms with the
+parameterization: in this example that it is within the bounds. The details are not important
+and you might not want to even override the base method.
+
+
+``BaseMCOParameterFactory``
+---------------------------
+Each ``BaseMCOParameter`` must be associated with a ``BaseMCOParameterFactory`` that returns
+its class, description, etc. ::
+
+    class RangedMCOParameterFactory(BaseMCOParameterFactory):
+        """ Ranged Parameter factory"""
+
+        def get_identifier(self):
+            return "ranged"
+
+        #: A name that will appear in the UI to identify this parameter.
+        def get_name(self):
+            return "Ranged"
+
+        #: Definition of the associated model class.
+        def get_model_class(self):
+            return RangedMCOParameter
+
+        #: A long description of the parameter
+        def get_description(self):
+            return "A parameter with a ranged level in floating point values."
+
+
+Each optimizer factory (see next topic) must return a list of such
+``BaseMCOParameterFactory`` s that correspond to parameterizations that it can handle. These
+can then be selected from the list of ``Available MCO Parameter Factories``
+in the Workflow Manager when creating the workflow's parameters.
+
+.. figure:: images/parameter_factory.png
+    :align: center
+    :scale: 70 %
+
+

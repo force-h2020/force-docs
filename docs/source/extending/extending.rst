@@ -10,9 +10,6 @@ It can optionally provide ``DataView`` and ``ContributedUI`` objects to be used 
 features will be dealt with in an extension tutorial.
 
 
-
-
-
 An example plugin implementation is available at:
 
 https://github.com/force-h2020/force-bdss-plugin-enthought-example
@@ -36,8 +33,9 @@ To implement a new plugin, you must define at least four classes:
        :maxdepth: 2
 
         The Plugin <create_install>
+        Factories and Classes <factory_class>
         Data Source <data_source>
-        Optimizer Engine <optimizer_engine>
         Parameterization <parameter>
+        Optimizer Engine <optimizer_engine>
         Notification <notification>
         User Interface <ui>

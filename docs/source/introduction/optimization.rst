@@ -1,6 +1,8 @@
 Optimization
 ============
 
+.. _optimization-ref:
+
 **Optimization** is the task of finding the set of **parameters** of a process that are "best" (**optimal**)
 in terms of a set of **criteria**  or **objectives**. For instance a soap factory might be looking for
 the optimal ratio of different fats and hydrolysis temperature (the inputs) that produce a soap
@@ -45,6 +47,8 @@ to find at best the global minimum/maximum or at least a local minima/maxima.
 Multi-criterion optimization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. _multicriteria-ref:
+
 If the objective function has more than one output, there are multiple surfaces,
 each with its own minima and maxima. At any point in parameter space, either:
 
@@ -65,6 +69,7 @@ each with its own minima and maxima. At any point in parameter space, either:
 Typically an industrial process will have multiple optimization criteria. Thus such
 algorithms are vitally important but have rarely been used through a lack of
 expertise and commonly available computational libraries or softwares that implement them.
+
 
 Optimizing a Directed Graph
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
