@@ -3,7 +3,7 @@ Data Source
 
 A data source is a node in the :ref:`workflow graph<wf-graph-ref>`.
 
-In the Workflow Manager, when you click on a data source, you will see the node's:
+In the Workflow Manager, when you click on a data source, you will see its:
 
 1. **function**.
     The function that the node computes.

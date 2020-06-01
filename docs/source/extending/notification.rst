@@ -6,20 +6,16 @@ listeners, including the data that is obtained by the MCO as it performs the
 evaluation. Communication to databases (for writing) and CSV/HDF5 writers are
 notification listeners.
 
-The notification listener requires a model (inherit from
-``BaseNotificationListenerModel``), a factory (from
-``BaseNotificationListenerFactory``) and a notification listener
-(from ``BaseNotificationListener``). The factory requires, in addition to::
+Each notification listener is defined by an implementation of ``BaseNotificationListenerFactory``, which
+contributes both ``BaseNotificationListenerModel`` and  ``BaseNotificationListener``
+subclasses. It therefore requires implementation of the following additional abstract methods alongside
+the standard ``get_identifier``, ``get_name``, and ``get_description`` methods::
 
-    def get_identifier(self):
-    def get_name(self):
-    def get_description(self):
     def get_model_class(self):
+        Returns a BaseNotificationListenerModel subclass
 
-the method::
-
-    get_listener_class()
-     return the notification listener object class.
+    def get_listener_class(self):
+        Returns a BaseNotificationListener subclass
 
 The BaseNotificationListener class must reimplement the following methods, that
 are invoked in specific lifetime events of the BDSS::
