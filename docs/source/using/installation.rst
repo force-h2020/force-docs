@@ -1,5 +1,6 @@
-Installation Instructions
--------------------------
+Installation
+============
+
 To install both ``force-bdss`` and the ``force-wfmanager`` applications, first checkout the following
 git repositories::
 
@@ -68,3 +69,6 @@ Now you can enter the deployed environment and invoke the programs::
 The programs can also be launched with an ``edm run`` command::
     
     ~/Anywhere $ edm run -e force-py36 -- force_wfmanager
+
+
+
