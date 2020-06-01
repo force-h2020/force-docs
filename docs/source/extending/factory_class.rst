@@ -7,7 +7,7 @@ one of the following:
 
 - an **optimizer**
 
-- an **parameterization**
+- a **parameterization**
 
 - a **notifier**
 
