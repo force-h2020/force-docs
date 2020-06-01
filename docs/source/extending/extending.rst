@@ -5,7 +5,7 @@ Force BDSS is extensible through the `Envisage <https://docs.enthought.com/envis
 plugin framework. A plugin can be (and generally is) provided as a separate python package that
 provides some new classes. Force BDSS will find these classes from the plugin at startup.
 
-A single plugin can provide one or more of the following: ``MCO``, ``DataSources``, ``NotificationListeners``, ``UIHooks``.
+A single plugin can provide one or more of the following: ``MCO``, ``DataSources`` or ``NotificationListeners``.
 It can optionally provide ``DataView`` and ``ContributedUI`` objects to be used by the ``force_wfmanager`` GUI: these
 features will be dealt with in an extension tutorial.
 
@@ -18,7 +18,7 @@ To implement a new plugin, you must define at least four classes:
 
 - The ``Plugin`` class itself.
 - One of the entities you want to implement: a ``DataSource``,
-  ``NotificationListener``, ``MCO``, or ``UIHook``.
+  ``NotificationListener`` or ``MCO``.
 - A ``Factory`` class for the entity above: it is responsible for creating the
   specific entity, for example, a ``DataSource``
 - A ``Model`` class which contains configuration options for the entity.

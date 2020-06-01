@@ -42,28 +42,27 @@ of the Gaussian data source, a two-dimensional Gaussian on the xy-plane:
 The source code for this data source can be examined
 `here <https://github.com/force-h2020/force-bdss-plugin-enthought-example>`_.
 
-``DataValue``
--------------
-The value of a node input or output. ``DataValue`` objects are passed between connected node's
-during execution of the graph/workflow. Object attributes are:
+``DataValue`` and ``Slot``
+--------------------------
+Both these classes represent node (data source) inputs and outputs.
+
+``DataValue`` objects carry the actual value of an input/ouput and are passed between
+connected node's during execution of the graph/workflow. Their attributes are:
 
 ``value``. The value of the input/output.
 
-``type``. The type of the input/output.
+``type``. The type of the input/output: a string that is meant to be a CUBA key.
 
 ``name``. The name of the input/output.
 
+``Slot`` objects describe the input.output and are the UI (Workflow Manager) interface
+ to the DataValues. Their attributes are:
 
-``Slot``
---------
-The description of a node input or output. ``Slot`` objects are
-#Object attributes are:
+``description``. A description of the input/output.
 
-``description``
+``type``. The 'CUBA' key of the input/output.
 
-
-``type``
-
+These functions could be merged into a single class.
 
 ``BaseDataSource``
 ------------------
@@ -75,8 +74,8 @@ The node's function. ::
             x = parameters[0].value
             y = parameters[1].value
 
-            a = ((x - model.cent_x)**2)/(2.0*model.sigm_x**2)
-            a += ((y - model.cent_y)**2) / (2.0*model.sigm_y**2)
+            a = ((x - model.cent_x) ** 2)/(2.0 * model.sigm_x ** 2)
+            a += ((y - model.cent_y) ** 2) / (2.0 * model.sigm_y ** 2)
             a = model.peak * math.exp(-a)
 
             return [

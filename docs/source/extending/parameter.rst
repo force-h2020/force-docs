@@ -36,19 +36,7 @@ A parameterization. ::
 
         def default_traits_view(self):
             return View(
-                Item("lower_bound",
-                     editor=TextEditor(auto_set=False, enter_set=True, evaluate=float)),
-                Item("upper_bound",
-                    editor=TextEditor(auto_set=False, enter_set=True, evaluate=float)),
-                Item("initial_value",
-                    editor=RangeEditor(
-                        low_name="lower_bound",
-                        high_name="upper_bound",
-                        format="%.3f",
-                        label_width=28,
-                    ),
-                ),
-                Item("n_samples"),
+                    ......
             )
 
         def verify(self):
@@ -69,7 +57,8 @@ the parameterization attributes.
 
 The ``verify`` method is used to verify that a given parameter conforms with the
 parameterization: in this example that it is within the bounds. The details are not important
-and you might not want to even override the base method.
+and you might not want to even override the base method. Also any Trait that needs to
+be verified in the UI when it is changed should set the verify=True metadata.
 
 
 ``BaseMCOParameterFactory``

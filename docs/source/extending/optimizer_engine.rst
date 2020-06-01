@@ -54,21 +54,21 @@ Creates a ``BaseOptimizerEngine`` object and runs that engine on the workflow. :
         def run(self, evaluator):
             model = evaluator.mco_model
 
-            optim = NevergradMultiOptimizer(
+            optimizer = NevergradMultiOptimizer(
                 algorithms=model.algorithms,
                 kpis=model.kpis,
                 budget=model.budget)
 
-            optimizer = AposterioriOptimizerEngine(
+            engine = AposterioriOptimizerEngine(
                 kpis=model.kpis,
                 parameters=model.parameters,
                 single_point_evaluator=evaluator,
                 verbose_run=model.verbose_run,
-                optimizer=optim
+                optimizer=optimizer
             )
 
             for index, (optimal_point, optimal_kpis) \
-                    in enumerate(optimizer.optimize()):
+                    in enumerate(engine.optimize()):
                 model.notify_progress_event(
                     [DataValue(value=v) for v in optimal_point],
                     [DataValue(value=v) for v in optimal_kpis],
@@ -145,7 +145,7 @@ In this example, ``optimize`` yields by calling another iterator: the ``optimize
 method of the ``IOptimizer`` instance. In our case this is the ``NevergradMultiOptimizer``
 object we met earlier. However we won't go any further into this: as explained, the separation of
 'optimizer' from 'engine' is optional. All one has to know is that the engine must have a
-``optimized`` iterator method which yields a point in parameter space and the KPI(s) at that point.
+``optimize`` iterator method which yields a point in parameter space and the KPI(s) at that point.
 
 ``BaseMCOCommunicator``
 -----------------------
