@@ -1,6 +1,8 @@
 Optimization
 ============
 
+.. _optimization-ref:
+
 **Optimization** is the task of finding the set of **parameters** of a process that are "best" (**optimal**)
 in terms of a set of **criteria**  or **objectives**. For instance a soap factory might be looking for
 the optimal ratio of different fats and hydrolysis temperature (the inputs) that produce a soap
@@ -45,6 +47,8 @@ to find at best the global minimum/maximum or at least a local minima/maxima.
 Multi-criterion optimization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. _multicriteria-ref:
+
 If the objective function has more than one output, there are multiple surfaces,
 each with its own minima and maxima. At any point in parameter space, either:
 
@@ -66,8 +70,11 @@ Typically an industrial process will have multiple optimization criteria. Thus s
 algorithms are vitally important but have rarely been used through a lack of
 expertise and commonly available computational libraries or softwares that implement them.
 
+
 Optimizing a Directed Graph
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _wf-graph-ref:
 
 Many processes can be divided up into granular, near-self-contained
 **sub-processes**, with the output of one feeding into the input of another. For
@@ -102,6 +109,7 @@ that below it is easy to figure out the execution layers manually. There are
 **topological sort** algorithms which can calculate the execution order and
 execution layers of a directed graph: for instance Kahn's algorithm and
 depth-first search. In the BDSS the execution layers are set manually by the user.
+
 
 .. figure:: images/graph.png
     :scale: 35 %
