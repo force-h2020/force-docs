@@ -21,7 +21,7 @@ the method::
     get_listener_class()
      return the notification listener object class.
 
-The NotificationListener class must reimplement the following methods, that
+The BaseNotificationListener class must reimplement the following methods, that
 are invoked in specific lifetime events of the BDSS::
 
     def initialize(self):
