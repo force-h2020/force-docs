@@ -63,7 +63,7 @@ given within the class declaration, ::
 
     >> bonjour le monde
 
-As with any python class member, traits variables are refered to by ``self`` in class
+As with any python class member, traits variables are refered to by ``self`` in
 methods, ::
 
    class HelloWorld(HasTraits):
