@@ -3,12 +3,12 @@ Traits and TraitsUI
 
 Traits is a python package, developed by Enthought, for creating and interacting with
 statically-typed variables: '**traits**'. To efficiently develop UIs for traits
-Enthough developed a sister package: TraitsUI.
+Enthough developed a sister package, TraitsUI.
 
 A class that has traits variables as attributes, inherits from ``HasTraits``,
-so that those traits can be initiated and handled appropriately. Most, if not all,
-of the classes in the BDSS (and the Workflow Manager) inherit from ``HasTraits``,
-therefore before extending BDSS, it is useful to have some knowledge of Traits and
+so that those variables can be initialized and handled appropriately. Most, if not all,
+of the classes in the BDSS (and in the Workflow Manager) inherit from ``HasTraits``,
+therefore before extending BDSS it is useful to have some basic knowledge of Traits and
 TraitsUI.
 
 Full documentation can be found here:
@@ -17,8 +17,8 @@ Full documentation can be found here:
 
 `TraitsUI <https://docs.enthought.com/traitsui/traitsui_user_manual/index.html#contents>`_
 
-These provide brief introductions to the packages. Here we will provide an even more
-minimal introduction, that should make the code examples in following topics clearer.
+These provide brief introductions to the packages. Here we provide an even more
+minimal introduction that should make the code examples in following topics clearer.
 
 Traits
 ------
@@ -49,18 +49,22 @@ The ``HasTraits`` inheritence defines a constructor that takes the traits as
 arguments. ::
 
     my_hello_world = HelloWorld(x='ciao mondo', .....)
+
     print(my_hello_world.x)
+
     >> ciao mondo
 
 If no argument is given for a trait it is initialized to the value (default or otherwise)
 given within the class declaration, ::
 
     my_hello_world = HelloWorld()
+
     print(my_hello_world.x)
+
     >> bonjour le monde
 
 Almost all classes in the BDSS and the Workflow Manager (including all those in the code
-examples in the following topics) are ``HasTraits``, usually by inheritance through
+examples in the following topics) inherit from ``HasTraits``, usually indirectly through
 a base class (you won't see ``HasTraits`` in the class declaration).
 
 Views
@@ -69,10 +73,10 @@ Views
 TraitsUI provides the UI to traits (as the name suggests!). It provides any
 ``HasTraits`` object with a default UI that exposes all the traits it contains. Each
 trait type is associated with a default UI element (text field for a Str, etc.) and
-TraitsUI lays out these elements automatically.
+TraitsUI lays out these elements automatically in a window or panel.
 
 A custom layout, possibly including custom UI elements ('editors'), can be provided by
-intialising a ``View`` object within the ``TraitsUI`` class, ::
+intializing a ``View`` object within the ``TraitsUI`` class, ::
 
     class HelloWorld(HasTraits):
 
@@ -88,7 +92,7 @@ intialising a ``View`` object within the ``TraitsUI`` class, ::
         )
 
 Each trait is associated with an ``Item`` object (itself a ``HasTraits`` class) by
-assigning the ``Item`` object's ``name`` attribute to the string of the trait
+assigning the ``Item`` 's ``name`` attribute to the string of the trait
 variable name. In addition, the ``Item`` constructor has optional arguments that
 determine what non-default UI elements ('editors'), if any, are used to expose
 the trait and how they are laid out.
@@ -97,7 +101,7 @@ The ``Item`` s are assigned to a ``View`` object as * vargs. In addition the ``V
 constructor has a number of optional keyword arguments that determine layout, etc.
 
 For layout purposes ``Item`` s can be grouped by assigning them to ``Group`` objects
-which as then assigned to the ``View``. ::
+that are then assigned to the ``View``. ::
 
     view = View(
         Group(
@@ -115,5 +119,5 @@ which as then assigned to the ``View``. ::
 Like for the ``View``, the ``Group`` constructor has a number of keyword arguments that
 effect layout, labelling, etc.
 
-In the following topics examples with  ``View`` initializations will show the
+In the following topics, code examples with  ``View`` initializations will show the
 resulting UI alongside.
