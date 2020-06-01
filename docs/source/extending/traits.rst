@@ -71,13 +71,11 @@ methods, ::
         x = Str('bonjour le monde')
 
         def shout_the_greeting(self):
-            self.x = self.x.upper() + '!'
+            return self.x.upper() + '!'
 
    my_hello_world = HelloWorld()
 
-   my_hello_world.shout_the_greeting()
-
-   print(my_hello_world.x)
+   print(my_hello_world.shout_the_greeting())
    >> BONJOUR LE MONDE!
 
 
