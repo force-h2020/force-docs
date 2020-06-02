@@ -33,5 +33,6 @@ to the BDSS and the Workflow Manager or otherwise have a specific meaning within
         Views <views>
         Setup the Workflow <wf_setup>
         Run the Workflow <wf_run>
+        Using the Command Line <command_line>
 
 
