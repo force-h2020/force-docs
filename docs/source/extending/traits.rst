@@ -81,13 +81,13 @@ methods,
         x = Str('bonjour le monde')
 
         def shout_the_greeting(self):
-            return self.x.upper() + '!'
+            return self.x.upper()
 
    my_hello_world = HelloWorld()
 
    print(my_hello_world.shout_the_greeting())
 
-   >> BONJOUR LE MONDE!
+   >> BONJOUR LE MONDE
 
 Almost all classes in the BDSS and the Workflow Manager (including all those in the code
 examples in the following topics) inherit from ``HasTraits``, usually indirectly through
