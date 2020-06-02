@@ -9,7 +9,9 @@ notification listeners.
 Each notification listener is defined by an implementation of ``BaseNotificationListenerFactory``, which
 contributes both ``BaseNotificationListenerModel`` and  ``BaseNotificationListener``
 subclasses. It therefore requires implementation of the following additional abstract methods alongside
-the standard ``get_identifier``, ``get_name``, and ``get_description`` methods::
+the standard ``get_identifier``, ``get_name``, and ``get_description`` methods
+
+.. code-block:: python
 
     def get_model_class(self):
         Returns a BaseNotificationListenerModel subclass
@@ -18,7 +20,9 @@ the standard ``get_identifier``, ``get_name``, and ``get_description`` methods::
         Returns a BaseNotificationListener subclass
 
 The BaseNotificationListener class must reimplement the following methods, that
-are invoked in specific lifetime events of the BDSS::
+are invoked in specific lifetime events of the BDSS
+
+.. code-block:: python
 
     def initialize(self):
         Called once, when the BDSS is initialized. For example, to setup the

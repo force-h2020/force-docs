@@ -32,6 +32,7 @@ To implement a new plugin, you must define at least four classes:
     .. toctree::
        :maxdepth: 2
 
+        Traits and TraitsUI <traits>
         The Plugin <create_install>
         Factories and Classes <factory_class>
         Data Source <data_source>

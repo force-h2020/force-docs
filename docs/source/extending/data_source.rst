@@ -66,7 +66,9 @@ These functions could be merged into a single class.
 
 ``BaseDataSource``
 ------------------
-The node's function. ::
+The node's function.
+
+.. code-block:: python
 
     class Gaussian(BaseDataSource):
 
@@ -108,7 +110,9 @@ The ``run`` method is the function itself. Its arguments are:
 ``run()`` returns the list of ``DataValue`` objects that are the node's outputs.
 
 The ``slots`` method returns ``Slot`` objects corresponding to the node's inputs and outputs, in the
-form of a tuple::
+form of a tuple
+
+.. code-block:: python
 
     ((<tuple of input slots>), (<tuple of output slots>))
 
@@ -119,7 +123,9 @@ of ``run``'s return.
 
 ``BaseDataSourceModel``
 -----------------------
-The node's 'internal' parameters ::
+The node's 'internal' parameters
+
+.. code-block:: python
 
     class GaussianModel(BaseDataSourceModel):
 
@@ -148,7 +154,9 @@ The ``View`` object determines how they are presented for editing in the Workflo
 ``BaseDataSourceFactory``
 -------------------------
 This is contributed to BDSS by the plugin and thus allows it to create instances of
-``BaseDataSource`` and ``BaseDataSourceModel``. ::
+``BaseDataSource`` and ``BaseDataSourceModel``.
+
+.. code-block:: python
 
     class GaussianFactory(BaseDataSourceFactory):
         def get_identifier(self):

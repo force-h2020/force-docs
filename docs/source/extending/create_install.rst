@@ -3,7 +3,9 @@ Creating a Plugin
 
 All plugin classes must
 
-- Inherit from ``force_bdss.api.BaseExtensionPlugin``::
+- Inherit from ``force_bdss.api.BaseExtensionPlugin``
+
+.. code-block:: python
 
     from force_bdss.api import BaseExtensionPlugin, plugin_id
 
@@ -13,7 +15,9 @@ All plugin classes must
     """This is an example of the plugin system for the BDSS."""
 
 - Implement a ``id`` class member, that must be set to the result of
-  calling the function ``plugin_id()``::
+  calling the function ``plugin_id()``
+
+.. code-block:: python
 
     id = plugin_id("enthought", "example", VERSION)
 
@@ -23,7 +27,9 @@ All plugin classes must
   ``get_description()`` to return appropriate values. The ``get_version()``
   method in particular should return the same value as in the id (in this case
   zero). It is advised to extract this value in a global, module level
-  constant::
+  constant
+
+.. code-block:: python
 
     def get_name(self):
         return "Enthought example"
@@ -35,7 +41,9 @@ All plugin classes must
         return VERSION
 
 - Implement a method ``get_factory_classes()`` returning a list of all
-  the classes (NOT the instances) of the entities you want to export.::
+  the classes (NOT the instances) of the entities you want to export.
+
+.. code-block:: python
 
     def get_factory_classes(self):
         return [
@@ -57,7 +65,9 @@ can be found `here <https://setuptools.readthedocs.io/en/latest/setuptools.html>
 The plugin is declared as an extension to the ``force_bdss`` by having it defined as the ``setup`` command
 ``entry_points`` keyword argument, under the namespace ``force.bdss.extensions``. You have to specify a path to the
 plugin class (in this case ``ExamplePlugin``), as given below. The name (before the ``'='``) of the plugin is irrelevant, but to avoid confusion,
-try to use the name of the module. For example::
+try to use the name of the module. For example
+
+.. code-block:: python
 
     entry_points={
         "force.bdss.extensions": [
@@ -66,7 +76,9 @@ try to use the name of the module. For example::
         ]
     }
 
-A basic example ``setup.py`` file is therefore shown below::
+A basic example ``setup.py`` file is therefore shown below
+
+.. code-block:: python
 
     from setuptools import setup, find_packages
 
@@ -87,7 +99,9 @@ A basic example ``setup.py`` file is therefore shown below::
     )
 
 Running the following command line instruction from the same directory as ``setup.py`` will then install
-the package in the deployed environment::
+the package in the deployed environment
+
+.. code-block:: console
 
     edm run -e force-py36 -- pip install -e .
 
@@ -102,7 +116,9 @@ In which case, the plugin class
 must inherit from ``force_bdss.api.ServiceOfferExtensionPlugin``
 , which is a child class of ``BaseExtensionPlugin``. Any UI subclasses
 can then be made discoverable by ``force-wfmanager`` using the Envisage
-``ServiceOffer`` protocol through the ``get_service_offer_factories`` method::
+``ServiceOffer`` protocol through the ``get_service_offer_factories`` method
+
+.. code-block:: python
 
     def get_service_offer_factories(self):
         """A method returning a list user-made objects to be provided by this
@@ -130,7 +146,9 @@ for any UI feature that can be used to display MCO data or a present a simplifie
 workflow builder respectively.
 
 Also, multiple types of plugin contributed UI objects can be imported in the same
-method. For instance::
+method. For instance
+
+.. code-block:: python
 
     from force_bdss.api import ServiceOfferExtensionPlugin
 
