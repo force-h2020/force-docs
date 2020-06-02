@@ -23,8 +23,10 @@ minimal introduction that should make the code examples in following topics clea
 Traits
 ------
 Traits are class objects (like every variable in python). The more common classes just
-wrap around a built-in python type, with a class name that is the capitalised version
-of the built-in type. For instance, ::
+wrap around a built-in python type, with a class name that is the camel case version
+of the built-in type. For instance,
+
+.. code-block:: python
 
     # initialization of a string trait, x.
     x = Str('hello world')
@@ -37,7 +39,9 @@ of the built-in type. For instance, ::
     print(z)
     >> 0.0
 
-Traits are typically initialized within a ``HasTraits`` class, ::
+Traits are typically initialized within a ``HasTraits`` class,
+
+.. code-block:: python
 
     class HelloWorld(HasTraits):
 
@@ -46,7 +50,9 @@ Traits are typically initialized within a ``HasTraits`` class, ::
         .....
 
 The ``HasTraits`` inheritence defines a constructor that takes the traits as
-arguments. ::
+arguments.
+
+.. code-block:: python
 
     my_hello_world = HelloWorld(x='ciao mondo', .....)
 
@@ -55,7 +61,9 @@ arguments. ::
     >> ciao mondo
 
 If no argument is given for a trait it is initialized to the value (default or otherwise)
-given within the class declaration, ::
+given within the class declaration,
+
+.. code-block:: python
 
     my_hello_world = HelloWorld()
 
@@ -64,7 +72,9 @@ given within the class declaration, ::
     >> bonjour le monde
 
 As with any python class member, traits variables are refered to by ``self`` in
-methods, ::
+methods,
+
+.. code-block:: python
 
    class HelloWorld(HasTraits):
 
@@ -92,7 +102,9 @@ trait type is associated with a default UI element (text field for a Str, etc.) 
 TraitsUI lays out these elements automatically in a window or panel.
 
 A custom layout, possibly including custom UI elements ('editors'), can be provided by
-intializing a ``View`` object within the ``TraitsUI`` class, ::
+intializing a ``View`` object within the ``TraitsUI`` class,
+
+.. code-block:: python
 
     class HelloWorld(HasTraits):
 
@@ -117,7 +129,9 @@ The ``Item`` s are assigned to a ``View`` object as * vargs. In addition the ``V
 constructor has a number of optional keyword arguments that determine layout, etc.
 
 For layout purposes ``Item`` s can be grouped by assigning them to ``Group`` objects
-that are then assigned to the ``View``. ::
+that are then assigned to the ``View``.
+
+.. code-block:: python
 
     view = View(
         Group(
