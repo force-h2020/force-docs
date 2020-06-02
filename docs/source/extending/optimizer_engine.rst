@@ -16,7 +16,9 @@ optimizer can be examined
 
 ``BaseMCOModel``
 ----------------
-The TraitsUI to the optimizer. ::
+The TraitsUI to the optimizer.
+
+.. code-block:: python
 
     class NevergradMCOModel(BaseMCOModel):
 
@@ -47,7 +49,9 @@ It exposes a set of optimizer parameters with an associated ``View``.
 
 ``BaseMCO``
 -----------
-Creates a ``BaseOptimizerEngine`` object and runs that engine on the workflow. ::
+Creates a ``BaseOptimizerEngine`` object and runs that engine on the workflow.
+
+.. code-block:: python
 
     class NevergradMCO(BaseMCO):
 
@@ -114,7 +118,9 @@ method if you want to pass additional/different values to the model.
 
 ``BaseOptimizerEngine``
 -----------------------
-Does the actual optimization. ::
+Does the actual optimization.
+
+.. code-block:: python
 
     class AposterioriOptimizerEngine(BaseOptimizerEngine):
 
@@ -157,7 +163,9 @@ the BDSS running as a subprocess of the MCO to evaluate a single point.
 ``BaseMCOFactory``
 ------------------
 This is contributed to BDSS by the plugin and thus allows it to create instances of
-``BaseMCOModel``, ``BaseMCO`` and ``BaseMCOCommunicator``. ::
+``BaseMCOModel``, ``BaseMCO`` and ``BaseMCOCommunicator``.
+
+.. code-block:: python
 
     class NevergradMCOFactory(BaseMCOFactory):
 

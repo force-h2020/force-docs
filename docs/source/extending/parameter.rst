@@ -18,7 +18,9 @@ parameterization can be examined
 
 ``BaseMCOParameter``
 --------------------
-A parameterization. ::
+A parameterization.
+
+.. code-block:: python
 
     class RangedMCOParameter(BaseMCOParameter):
 
@@ -64,7 +66,9 @@ be verified in the UI when it is changed should set the verify=True metadata.
 ``BaseMCOParameterFactory``
 ---------------------------
 Each ``BaseMCOParameter`` must be associated with a ``BaseMCOParameterFactory`` that returns
-its class, description, etc. ::
+its class, description, etc.
+
+.. code-block:: python
 
     class RangedMCOParameterFactory(BaseMCOParameterFactory):
         """ Ranged Parameter factory"""
