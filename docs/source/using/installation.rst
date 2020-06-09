@@ -68,8 +68,3 @@ and (optional, but recommended), the example plugins
     ~/Force-Project (edm)$ cd force-bdss-plugin-enthought-example
     ~/Force-Project/force-bdss-plugin-enthought-example (edm)$ python -m ci install
     ~/Force-Project/force-bdss-plugin-enthought-example (edm)$ cd ..
-
-
-
-
-
