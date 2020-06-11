@@ -1,9 +1,6 @@
 Installation
 ============
 
-The FORCE 2020 Repositories
----------------------------
-
 The BDSS, the Workflow Manager and all plugins can be cloned from the
 `Force 2020 github respositories <https://github.com/force-h2020>`_.
 For the BDSS and Workflow Manager,
@@ -25,12 +22,12 @@ Enthought Deployment Manager
 ----------------------------
 
 The BDSS, the Workflow Manager and plugins must be installed through the `Enthought Deployment
-Manager (EDM) <https://www.enthought.com/enthought-deployment-manager/>`_, an environment and
-package manager similar to Anaconda. EDM's documentation is
-`here <http://docs.enthought.com/edm/>`_.
+Manager (EDM) <https://www.enthought.com/enthought-deployment-manager/>`_, a python environment and
+package manager similar to Anaconda. For new users it is worth examining EDM's
+`documentation <http://docs.enthought.com/edm/>`_.
 
 To install EDM, follow the instructions specific to your operating system
-`here <https://docs.enthought.com/edm/installation.html>`_.
+`,here <https://docs.enthought.com/edm/installation.html>`_.
 
 Once EDM is installed enter the EDM shell,
 
@@ -38,18 +35,19 @@ Once EDM is installed enter the EDM shell,
 
     edm shell
 
-and install the default environment,
+and install the default ``edm`` environment,
 
 .. code-block:: console
 
     edm install -y click setuptools
 
-You in the default environment called ``edm`` and your shell prompt contains ``(edm)``.
+You are now in the ``edm`` environment and your shell prompt is prefixed
+with ``(edm)``.
 
 Repository Installation
 -----------------------
 
-The default is the 'bootstrap' environment, used to install the cloned respositories.
+``edm`` is the 'bootstrap' environment, used to install the cloned respositories.
 For each respository in turn, cd into its directory and then install it with
 ``python -m ci install``. i.e.,
 
@@ -73,7 +71,7 @@ The BDSS Runtime Environment
 
 .. _bdss-environment-ref:
 
-BDSS must be run in a separate environment from the default. To create this environment, first cd
+BDSS must be run in a separate environment from ``edm``. To create this environment, first cd
 into the cloned force-bdss respository,
 
 .. code-block:: console
@@ -87,17 +85,14 @@ and then,
     ~/Force-Project/force-bdss (edm)$ python -m ci build-env
 
 This creates a environment called ``force-pyXX``, where ``XX`` refers to the python version that
-the environment runs. You will see this in the list of EDM environments,
+the environment runs (e.g. ``36`` for python 3.6) . You will now see it in the list of EDM environments,
 
 .. code-block:: console
 
-    edm environments list
+    (edm)$ edm environments list
 
     >> * edm           cpython  3.6.9+2  win_x86_64  msvc2015  ~\.edm\envs\edm
     >>   force-pyXX    cpython  3.6.9+2  win_x86_64  msvc2015  ~.edm\envs\force-pyXX
 
 To run BDSS from the command line see :ref:`Using the Command Line <cli-ref>`.
-
-
-
 
