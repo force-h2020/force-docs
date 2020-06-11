@@ -1,70 +1,103 @@
 Installation
 ============
 
-To install both ``force-bdss`` and the ``force-wfmanager`` applications, first checkout the following
-git repositories
+The FORCE 2020 Repositories
+---------------------------
+
+The BDSS, the Workflow Manager and all plugins can be cloned from the
+`Force 2020 github respositories <https://github.com/force-h2020>`_.
+For the BDSS and Workflow Manager,
 
 .. code-block:: console
 
     git clone https://github.com/force-h2020/force-bdss
     git clone https://github.com/force-h2020/force-wfmanager
+
+This tutorial uses the Enthought-Example and Nevergrad plugins as examples,
+
+.. code-block:: console
+
     git clone https://github.com/force-h2020/force-bdss-plugin-enthought-example
+    git clone https://github.com/force-h2020/force-bdss-plugin-nevergrad
 
-The last repository is optional, but recommended if you want to practice
-writing plugins.
 
-If you never installed the Enthought Deployment Manager (EDM), perform the following operations
+Enthought Deployment Manager
+----------------------------
+
+The BDSS, the Workflow Manager and plugins must be installed through the `Enthought Deployment
+Manager (EDM) <https://www.enthought.com/enthought-deployment-manager/>`_, an environment and
+package manager similar to Anaconda. EDM's documentation is
+`here <http://docs.enthought.com/edm/>`_.
+
+To install EDM, follow the instructions specific to your operating system
+`here <https://docs.enthought.com/edm/installation.html>`_.
+
+Once EDM is installed enter the EDM shell,
 
 .. code-block:: console
 
-    wget https://package-data.enthought.com/edm/rh5_x86_64/1.11/edm_1.11.0_linux_x86_64.sh && bash ./edm_1.11.0_linux_x86_64.sh-b -f -p $HOME
-    export PATH=${HOME}/edm/bin:${PATH}
-    edm install --version 3.6 -y click setuptools
     edm shell
 
-If you instead already have an EDM installation and a default environment, perform the following
+and install the default environment,
 
 .. code-block:: console
 
-    edm shell
     edm install -y click setuptools
 
-Verify that your shell prompt now contains the string "``(edm)``".
-You are now in your default EDM environment, and we assume this environment to be the bootstrap environment.
-The BDSS software will not be installed in this environment, but in a separate one. The following
-commands however must be executed from the bootstrap environment.
+You in the default environment called ``edm`` and your shell prompt contains ``(edm)``.
 
-Installation of the force BDSS runtime environment is performed with the
-following command. This should be done from the directory containing the ``force-bdss`` folder (named
-``Force-Project`` in this example)
+Repository Installation
+-----------------------
 
-.. code-block:: console
-
-    ~/Force-Project (edm)$ cd force-bdss
-    ~/Force-Project/force-bdss (edm)$ python -m ci build-env
-
-This will create another edm environment called ``force-py36``.
-Do not enter this environment. 
-
-To install the BDSS
+The default is the 'bootstrap' environment, used to install the cloned respositories.
+For each respository in turn, cd into its directory and then install it with
+``python -m ci install``. i.e.,
 
 .. code-block:: console
 
     ~/Force-Project/force-bdss (edm)$ python -m ci install
-    ~/Force-Project/force-bdss (edm)$ cd ..
-    
-To install the workflow manager
 
-.. code-block:: console
-
-    ~/Force-Project (edm)$ cd force-wfmanager
+    ~/Force-Project/force-bdss (edm)$ cd ../force-wfmanager
     ~/Force-Project/force-wfmanager (edm)$ python -m ci install
-    ~/Force-Project/force-wfmanager (edm)$ cd ..
 
-and (optional, but recommended), the example plugins
+    ~/Force-Project/force-wfmanager (edm)$ cd ../force-bdss-plugin-enthought-example
+    ~/Force-Project/force-bdss-plugin-enthought-example (edm)$ python -m ci install
+
+    ~/Force-Project/force-wfmanager (edm)$ cd ../force-bdss-plugin-nevergrad
+    ~/Force-Project/force-bdss-plugin-nevergrad (edm)$ python -m ci install
+
+    ...etc
+
+The BDSS Runtime Environment
+----------------------------
+
+.. _bdss-environment-ref:
+
+BDSS must be run in a separate environment from the default. To create this environment, first cd
+into the cloned force-bdss respository,
 
 .. code-block:: console
 
-    ~/Force-Project (edm)$ cd force-bdss-plugin-enthought-example
-    ~/Force-Project/force-bdss-plugin-enthought-example (edm)$ python -m ci install
-    ~/Force-Project/force-bdss-plugin-enthought-example (edm)$ cd ..
+    ~/Force-Project (edm)$ cd force-bdss
+
+and then,
+
+.. code-block:: console
+
+    ~/Force-Project/force-bdss (edm)$ python -m ci build-env
+
+This creates a environment called ``force-pyXX``, where ``XX`` refers to the python version that
+the environment runs. You will see this in the list of EDM environments,
+
+.. code-block:: console
+
+    edm environments list
+
+    >> * edm           cpython  3.6.9+2  win_x86_64  msvc2015  ~\.edm\envs\edm
+    >>   force-pyXX    cpython  3.6.9+2  win_x86_64  msvc2015  ~.edm\envs\force-pyXX
+
+To run BDSS from the command line see :ref:`Using the Command Line <cli-ref>`.
+
+
+
+
