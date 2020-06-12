@@ -3,22 +3,23 @@ Using the Command Line
 
 .. _cli-ref:
 
-Both the BDSS and the Workflow Manager can be invoked from the command line whilst
-running a bash shell in the :ref:`force-pyXX environment  <bdss-environment-ref>`.
+Both the BDSS and the Workflow Manager can be invoked from the command line whilst in the
+:ref:`BDSS runtime environment <bdss-environment-ref>`.
+For example, if the runtime environment is ``force-py36``,
 
 .. code-block:: console
 
-    # enter a shell running the environment
-    $ edm shell -e force-pyXX
+    # enter the environment
+    $ edm shell -e force-py36
 
     # execute the workflow
-    (force-pyXX)$ force_bdss workflow.json
+    (force-py36)$ force_bdss workflow.json
 
     # open the Workflow Manager with the workflow loaded
-    (force-pyXX)$ force_wfmanager workflow.json
+    (force-py36)$ force_wfmanager workflow.json
 
     # open the Workflow Manager
-    (force-pyXX)$ force_wfmanager
+    (force-py36)$ force_wfmanager
 
 The ``force_bdss`` command initiates the BDSS MCO runner, and therefore must be passeda workflow JSON
 that contains optimization instructions. The ``force_wfmanager`` command initiates the Workflow Manager
@@ -30,11 +31,11 @@ The ``force_bdss`` can also be invoked using the ``--evaluate`` flag, which swit
 was designed to allow an external process (or program) to control the optimization procedure, whilst the
 system itself continues to be represented as a FORCE BDSS workflow. This is considered an 'advanced'
 feature of the BDSS framework, and so will be explored in a later extension to the main tutorial.
-EDM also supports running commands from outside a shell, using the ``edm run`` command.
+EDM also supports running commands from outside an environment, using the ``edm run`` command.
 
 .. code-block:: console
 
-    $ edm run -e force-pyXX -- force_wfmanager
+    $ edm run -e force-py36 -- force_wfmanager
 
 For further assistance on EDM, use the ``edm --help`` tool or visit the
 `latest documentation <https://docs.enthought.com/edm/>`_.

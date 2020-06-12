@@ -1,23 +1,24 @@
 Starting the Workflow Manager
 =============================
 
-The Workflow Manager can be started from within the ``edm`` environment with,
+The Workflow Manager can be started from within the ``bootstrap`` environment with,
 
 .. code-block:: console
 
-    (edm)$ edm run -e force-pyXX -- force_wfmanager
+    (bootstrap)$ edm run -e force-pyXX -- force_wfmanager
 
-Alternatively one can enter the ``force-pyXX`` environment,
+where force-pyXX is the :ref:`BDSS runtime environment <bdss-environment-ref>`.
+Alternatively one can enter the runtime environment, e.g. ``force-py36``,
 
 .. code-block:: console
 
-    (edm)$ edm shell -e force-pyXX
+    (bootstrap)$ edm shell -e force-py36
 
 and then,
 
 .. code-block:: console
 
-    (force-pyXX)(edm)$ force_wfmanager
+    (force-py36)(bootstrap)$ force_wfmanager
 
 Views
 -----
