@@ -77,7 +77,7 @@ the environment runs (e.g. ``force-py36`` for python 3.6) . You will now see it 
 
     (bootstrap)$ edm environments list
 
-    >> * bootstrap     cpython  3.6.9+2  win_x86_64  msvc2015  ~\.edm\envs\edm
+    >> * bootstrap     cpython  3.6.9+2  win_x86_64  msvc2015  ~\.edm\envs\bootstrap
     >>   force-py36    cpython  3.6.9+2  win_x86_64  msvc2015  ~.edm\envs\force-pyXX
 
 To run BDSS from the command line see :ref:`Using the Command Line <cli-ref>`.
