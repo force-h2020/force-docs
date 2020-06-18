@@ -18,6 +18,17 @@ The BDSS can be run either as a stand-alone command-line program or within a gra
 software called the **Workflow Manager**. The BDSS is also extensible: "plugins" can be developed by the user
 that add functionality to the software, typically in terms of functions and optimization algorithms.
 
+Useful links:
+
+`European Materials Modelling Council <https://emmc.info/>`_
+
+`FORCE EU <https://www.the-force-project.eu/>`_
+
+`FORCE Cordis page <https://cordis.europa.eu/project/id/721027>`_
+
+
+
+
 .. topic:: Topics
 
     .. toctree::
