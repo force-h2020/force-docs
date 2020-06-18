@@ -11,5 +11,4 @@ the FORCE-BDSS project.
        :maxdepth: 2
 
         Definitions <definitions>
-
-        BDSS Components <force_bdss>
+        Components <components>
