@@ -25,6 +25,7 @@ The contents can be viewed at https://force-tutorial.readthedocs.io/en/latest/
         Introduction <introduction/introduction>
         Using the BDSS: The Workflow Manager <using/using>
         Extending the BDSS: Plugin Development <extending/extending>
+        Appendices: FORCE-BDSS <appendices/appendix>
 
 
 .. topic:: Indices and Tables
