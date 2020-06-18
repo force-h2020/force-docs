@@ -9,6 +9,3 @@ the FORCE-BDSS project.
 
     .. toctree::
        :maxdepth: 2
-
-        Definitions <definitions>
-        Components <components>
