@@ -31,6 +31,7 @@ The ``force_bdss`` can also be invoked using the ``--evaluate`` flag, which swit
 was designed to allow an external process (or program) to control the optimization procedure, whilst the
 system itself continues to be represented as a FORCE BDSS workflow. This is considered an 'advanced'
 feature of the BDSS framework, and so will be explored in a later extension to the main tutorial.
+
 EDM also supports running commands from outside an environment, using the ``edm run`` command.
 
 .. code-block:: console

@@ -4,9 +4,17 @@ Optimization
 .. _optimization-ref:
 
 **Optimization** is the task of finding the set of **parameters** of a process that are "best" (**optimal**)
-in terms of a set of **criteria**  or **objectives**. For instance a soap factory might be looking for
+in terms of a set of **criteria**, **objectives** or **key performance indicators**.
+For instance a soap factory might be looking for
 the optimal ratio of different fats and hydrolysis temperature (the inputs) that produce a soap
-that has the best smell, the most suds and is cheap (the criteria/objectives).
+that has the best smell, the most suds and is cheap (the criteria/objectives)/KPIs.
+
+.. topic:: Key Performance Indicator (KPI)
+
+    A performance indicator that has a target value and is declared to be of
+    importance to the company. A KPI can be a combination of one or more performance
+    indicators, e.g. in objective functions. A performance indicator can be declared
+    to be a key performance indicator if there is a target value related to it.
 
 Traditionally manufacturers have optimized their process at the R&D lab bench, before scaling-up
 to the plant or factory. Optimization is guided, like any good experiment, by a mixture of

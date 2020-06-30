@@ -1,6 +1,39 @@
 Installation
 ============
 
+To install both ``force-bdss`` and the ``force-wfmanager`` applications, first checkout the following
+git repositories
+
+.. code-block:: console
+
+    git clone https://github.com/force-h2020/force-bdss
+    git clone https://github.com/force-h2020/force-wfmanager
+    git clone https://github.com/force-h2020/force-bdss-plugin-enthought-example
+
+The last repository is optional, but recommended if you want to practice
+writing plugins.
+
+If you never installed the Enthought Deployment Manager (EDM), perform the following operations
+
+.. code-block:: console
+
+    wget https://package-data.enthought.com/edm/rh5_x86_64/1.11/edm_1.11.0_linux_x86_64.sh && bash ./edm_1.11.0_linux_x86_64.sh-b -f -p $HOME
+    export PATH=${HOME}/edm/bin:${PATH}
+    edm install --version 3.6 -y click setuptools
+    edm shell
+
+If you instead already have an EDM installation and a default environment, perform the following
+
+.. code-block:: console
+
+    edm shell
+    edm install -y click setuptools
+
+Verify that your shell prompt now contains the string "``(edm)``".
+You are now in your default EDM environment, and we assume this environment to be the bootstrap environment.
+Installation
+============
+
 The BDSS, the Workflow Manager and all plugins can be cloned from the
 `Force 2020 github respositories <https://github.com/force-h2020>`_.
 For the BDSS and Workflow Manager,
