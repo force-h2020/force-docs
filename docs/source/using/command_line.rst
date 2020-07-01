@@ -1,13 +1,15 @@
 Using the Command Line
 ======================
 
-Both the BDSS and the Workflow Manager can be invoked from the command line whilst
-running a bash shell in the  ``force-py36`` Enthought Deployment Manager (EDM)
-environment.
+.. _cli-ref:
+
+Both the BDSS and the Workflow Manager can be invoked from the command line whilst in the
+:ref:`BDSS runtime environment <bdss-environment-ref>`.
+For example, if the runtime environment is ``force-py36``,
 
 .. code-block:: console
 
-    # enter a shell running the environment
+    # enter the environment
     $ edm shell -e force-py36
 
     # execute the workflow
@@ -23,12 +25,14 @@ The ``force_bdss`` command initiates the BDSS MCO runner, and therefore must be 
 that contains optimization instructions. The ``force_wfmanager`` command initiates the Workflow Manager
 GUI, and therefore can start up with a default empty workflow, since it provides additional UI features to
 create, modify and export workflows.
+
 The ``force_bdss`` can also be invoked using the ``--evaluate`` flag, which switches the application from
 'optimize' to 'evaluate' mode and performs a single point evaluation of the workflow only. This functionality
 was designed to allow an external process (or program) to control the optimization procedure, whilst the
 system itself continues to be represented as a FORCE BDSS workflow. This is considered an 'advanced'
 feature of the BDSS framework, and so will be explored in a later extension to the main tutorial.
-EDM also supports running commands from outside a shell, using the ``edm run`` command.
+
+EDM also supports running commands from outside an environment, using the ``edm run`` command.
 
 .. code-block:: console
 
